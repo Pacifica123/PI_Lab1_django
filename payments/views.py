@@ -23,3 +23,4 @@ def charge(request):
             return JsonResponse({'message': 'Payment successful!'})
         except stripe.error.CardError as e:
             return JsonResponse({'error': str(e)})
+

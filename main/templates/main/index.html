@@ -13,29 +13,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <meta charset="UTF-8">
 <title>Icndy Bootstarp Website Template | Home :: w3layouts</title>
-{% comment %} <link href="web/css/bootstrap.css" rel='stylesheet' type='text/css' />
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<!-- Custom Theme files -->
-<link href="web/css/style.css" rel='stylesheet' type='text/css' /> {% endcomment %}
-<!-- Custom Theme files -->
-{% comment %} <meta name="viewport" content="width=device-width, initial-scale=1"> {% endcomment %}
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!--webfont-->
-{% comment %} <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> {% endcomment %}
-{% comment %} <script type="text/javascript" src="web/js/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="web/js/hover_pack.js"></script> {% endcomment %}
-<!-- start menu -->
-{% comment %} <link href="web/css/megamenu.css" rel="stylesheet" type="text/css" media="all" /> {% endcomment %}
-{% comment %} <script type="text/javascript" src="web/js/megamenu.js"></script> {% endcomment %}
-<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
-<script type="text/javascript">
-					jQuery(document).ready(function($) {
-						$(".scroll").click(function(event){		
-							event.preventDefault();
-							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-						});
-					});
-</script>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script src="{% static 'main/js/megamenu.js' %}"></script>
+<script src="{% static 'main/js/jquery.etalage.min.js' %}"></script>
+<script src="{% static 'main/js/hover_pack.js' %}"></script>
+<script src="{% static 'main/js/cbpViewModelSwitch.js' %}"></script>
+<script src="{% static 'main/js/classie.js' %}"></script>
+<script src="{% static 'main/js/easyResponsiveTabs.js' %}"></script>
+<script src="{% static 'main/js/jquery-1.11.1.min.js' %}"></script>
 
 <link rel="stylesheet" type="text/css" href="{% static 'main/css/style.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'main/css/megamenu.css' %}">
