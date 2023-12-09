@@ -250,12 +250,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					{% for product in products %}
                         <li>
                             <a href="#image-{{ product.id }}">
-                                <img src="{{ product.image.url }}" class="img-responsive" alt="{{ product.name }}"/>
+                                <img src="{{ media_root }}{{ product.image.url }}" class="img-responsive" alt="{{ product.name }}"/>
                                 <span>{{ product.name }}</span>
                             </a>
                             <div class="lb-overlay" id="image-{{ product.id }}">
                                 <a href="#page" class="lb-close">x Close</a>
-                                <img src="{{ product.image.url }}" class="img-responsive" alt="{{ product.name }}"/>
+                                <img src="{{ media_root }}{{ product.image.url }}" class="img-responsive" alt="{{ product.name }}"/>
+								<p>Полный путь к изображению: {{ media_root }}/{{ product.image.url}}</p>
                                 <div>
                                     <h3>{{ product.name }} <span>{{ product.description }}</span></h3>
                                     <p>{{ product.description }}</p>
