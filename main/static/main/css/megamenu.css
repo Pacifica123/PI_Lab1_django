@@ -4,7 +4,7 @@
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
-	color:#fff;
+	color:#fcff68;
 	letter-spacing:5px;
 	font-weight:400;
 }
@@ -26,7 +26,7 @@
 .megamenu form.contact input[type="text"]:focus,
 .megamenu form.contact textarea:focus{border:solid 1px #999}
 .megamenu form.contact input[type="submit"]{width:100px;height:35px;border:0;color:#fff;cursor:pointer;background:#999}
-.megapanel .row{width:100%;margin-top:15px;margin:0px !important;}
+.megapanel .row{width:100%; padding: 10px; margin-top:15px;margin:0px !important;}
 .megapanel .row:first-child{margin-top:0}
 .megapanel .row:before,.megapanel .row:after{display:table;content:"";line-height:0}
 .megapanel .row:after{clear:both}
@@ -38,6 +38,82 @@
 .megapanel .row .col4{width:65.95744680851064%}
 .megapanel .row .col5{width:82.97872340425532%}
 .megapanel .row .col6{width:100%}
+/* МОИ КОРРЕКТИВЫ */
+
+.menu-item .megapanel {
+    display: none;
+    position: relative;
+	
+}
+
+.menu-item:hover .megapanel {
+    display: block;	
+}
+
+.menu-item ul{
+	padding: 10px 0;
+	width: 250px;
+}
+
+/* Добавляем стили для активного подменю */
+.dropdown.active .megapanel {
+    display: block;
+}
+
+
+
+.menu-item:hover .submenu {
+    display: block;
+}
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+	
+    z-index: 999;
+}
+.submenu ul {
+    width: 200px; /* Ширина выпадающего подменю */
+	
+}
+
+.submenu li {
+    clear: both;
+    width: 100%;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+	
+}
+
+.submenu li:last-child {
+    border-bottom: 0;
+}
+
+.submenu a {
+    float: left;
+    width: 200px;
+    padding: 10px 5px;
+    text-decoration: none;
+    display: block;
+    /* border: 0 none; */
+    font-size: 14px;
+    color: #444;
+    background: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    transition: color 0.4s ease-in-out;
+    -moz-transition: color 0.4s ease-in-out;
+    -webkit-transition: color 0.4s ease-in-out;
+    -o-transition: color 0.4s ease-in-out;
+	/* padding-right: 50px; */
+}
+
+.submenu a:hover {
+    background: #dbdbdb;
+}
+
+/* -------------- */
 .megamenu>li.showhide{display:none;width:100%;height:50px;cursor:pointer;color:#555;border-bottom:solid 1px rgba(0,0,0,0.1);background:#eee;background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkYmRiZGIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);background:-moz-linear-gradient(top,#eee 0,#dbdbdb 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#eee),color-stop(100%,#dbdbdb));background:-webkit-linear-gradient(top,#eee 0,#dbdbdb 100%);background:-o-linear-gradient(top,#eee 0,#dbdbdb 100%);background:-ms-linear-gradient(top,#eee 0,#dbdbdb 100%);background:linear-gradient(to bottom,#eee 0,#dbdbdb 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee',endColorstr='#dbdbdb',GradientType=0)}
 .megamenu>li.showhide span.title{margin:15px 0 0 25px;float:left}.megamenu>li.showhide span.icon1:after{position:absolute;content:"";right:25px;top:15px;height:3px;width:25px;font-size:50px;border-top:3px solid #fff;border-bottom:3px solid #fff;z-index:1}
 .megamenu>li.showhide span.icon2:after{position:absolute;content:"";right:25px;top:27px;height:3px;width:25px;font-size:50px;border-top:3px solid #fff;border-bottom:3px solid #fff;z-index:1}
@@ -45,8 +121,8 @@
 }
 	
 /*--.skyblue li>a,.skyblue>li.showhide span{color:#555}--*/
-.skyblue>li:hover>a,.skyblue .dropdown li:hover>a{color:#555; background:#ffffff;}.
-skyblue .megapanel img:hover,.skyblue form.contact input[type="text"]:focus,.skyblue form.contact textarea:focus{}
+.skyblue>li:hover>a,.skyblue .dropdown li:hover>a{color:#555; background:#ffffff;}
+.skyblue .megapanel img:hover,.skyblue form.contact input[type="text"]:focus,.skyblue form.contact textarea:focus{}
 .skyblue form.contact input[type="submit"]{background:#00405d;text-transform:uppercase;}
 @media(max-width:1024px){
 	.megamenu>li>a {

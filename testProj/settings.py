@@ -137,6 +137,9 @@ STRIPE_PUBLIC_KEY = 'pk_test_51O2CA5HyjWPuYVM6CbMo7MJmqflO1yJ9oZfDumkQF2JZanQT5P
 STRIPE_SECRET_KEY = 'sk_test_51O2CA5HyjWPuYVM61i1zpWEanVvjS4KFIlzITsspk83399CP8U1tjgFQfsTQrEsBzY4XVpIZ82fzSLfo4h7RvQFC00uIvgWrYn'
 DJSTRIPE_FOREIGN_KEY_TO_FIELD = "id"
 
-
+# Отображение фото
 MEDIA_URL = '/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Авторизация
+LOGIN_REDIRECT_URL = '/main/index/'

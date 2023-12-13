@@ -16,13 +16,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
+<script src="{% static 'main/js/jquery-1.11.1.min.js' %}"></script>
 <script src="{% static 'main/js/megamenu.js' %}"></script>
 <script src="{% static 'main/js/jquery.etalage.min.js' %}"></script>
 <script src="{% static 'main/js/hover_pack.js' %}"></script>
-<script src="{% static 'main/js/cbpViewModelSwitch.js' %}"></script>
+<script src="{% static 'main/js/cbpViewModeSwitch.js' %}"></script>
 <script src="{% static 'main/js/classie.js' %}"></script>
 <script src="{% static 'main/js/easyResponsiveTabs.js' %}"></script>
-<script src="{% static 'main/js/jquery-1.11.1.min.js' %}"></script>
+
+
+
+
 
 <link rel="stylesheet" type="text/css" href="{% static 'main/css/style.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'main/css/megamenu.css' %}">
@@ -40,13 +44,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 	   <div class="menu">
 	     <ul class="skyblue">
-			<li><a class="color2" href="#">Mens</a>
+			<li class="menu-item"><a class="color2" href="#">M&W</a>
 				<div class="megapanel">
 					<div class="row">
 						<div class="col1">
 							<div class="h_nav">
 								<h4>Men</h4>
-								<ul>
+								<ul class="submenu">
 									<li><a href="men.html">Jackets</a></li>
 									<li><a href="men.html">Blazers</a></li>
 									<li><a href="men.html">Suits</a></li>
@@ -62,7 +66,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="col1">
 							<div class="h_nav">
 								<h4>Women</h4>
-								<ul>
+								<ul class="submenu">
 									<li><a href="men.html">Outerwear</a></li>
 									<li><a href="men.html">Dresses</a></li>
 									<li><a href="men.html">Handbags</a></li>
@@ -75,50 +79,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</ul>	
 							</div>							
 						</div>
-						<div class="col2">
-							<div class="h_nav">
-								<h4>Trends</h4>
-								<ul>
-									<li class>
-										<div class="p_left">
-										  <img src="web/images/p1.jpg" class="img-responsive" alt=""/>
-										</div>
-										<div class="p_right">
-											<h4><a href="#">Denim shirt</a></h4>
-											<span class="item-cat"><small><a href="#">Jackets</a></small></span>
-											<span class="price">29.99 $</span>
-										</div>
-										<div class="clearfix"> </div>
-									</li>
-									<li>
-										<div class="p_left">
-										  <img src="web/images/p2.jpg" class="img-responsive" alt=""/>
-										</div>
-										<div class="p_right">
-											<h4><a href="#">Denim shirt</a></h4>
-											<span class="item-cat"><small><a href="#">Jackets</a></small></span>
-											<span class="price">29.99 $</span>
-										</div>
-										<div class="clearfix"> </div>
-									</li>
-									<li>
-										<div class="p_left">
-										  <img src="web/images/p3.jpg" class="img-responsive" alt=""/>
-										</div>
-										<div class="p_right">
-											<h4><a href="#">Denim shirt</a></h4>
-											<span class="item-cat"><small><a href="#">Jackets</a></small></span>
-											<span class="price">29.99 $</span>
-										</div>
-										<div class="clearfix"> </div>
-									</li>
-								</ul>	
-							</div>												
-						</div>
+						
 					  </div>
 					</div>
 			</li>
-			<li><a class="color4" href="#">womens</a>
+			{% comment %} <li class="menu-item"><a class="color4" href="#">womens</a>
 				<div class="megapanel">
 					<div class="row">
 						<div class="col1">
@@ -152,55 +117,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<li><a href="men.html">Accessories</a></li>
 								</ul>	
 							</div>							
-						</div> 
-						{% comment %} <div class="col2">
-							<div class="h_nav">
-								<h4>Trends</h4>
-								<ul>
-									<li class>
-										<div class="p_left">
-										  <img src="web/images/p1.jpg" class="img-responsive" alt=""/>
-										</div>
-										<div class="p_right">
-											<h4><a href="#">Denim shirt</a></h4>
-											<span class="item-cat"><small><a href="#">Jackets</a></small></span>
-											<span class="price">29.99 $</span>
-										</div>
-										<div class="clearfix"> </div>
-									</li>
-									<li>
-										<div class="p_left">
-										  <img src="web/images/p2.jpg" class="img-responsive" alt=""/>
-										</div>
-										<div class="p_right">
-											<h4><a href="#">Denim shirt</a></h4>
-											<span class="item-cat"><small><a href="#">Jackets</a></small></span>
-											<span class="price">29.99 $</span>
-										</div>
-										<div class="clearfix"> </div>
-									</li>
-									<li>
-										<div class="p_left">
-										  <img src="web/images/p3.jpg" class="img-responsive" alt=""/>
-										</div>
-										<div class="p_right">
-											<h4><a href="#">Denim shirt</a></h4>
-											<span class="item-cat"><small><a href="#">Jackets</a></small></span>
-											<span class="price">29.99 $</span>
-										</div>
-										<div class="clearfix"> </div>
-									</li>
-								</ul>	
-							</div>												
-						</div> {% endcomment %}
-					  </div>
+						
 					</div>
-				</li>				
-				<li><a class="color10" href="brands.html">Brands</a></li>
-				<li class="active grid"><a class="color3" href="index.html">Sale</a></li>
-				<li><a class="color7" href="404.html">News</a></li>
+			</li>				 {% endcomment %}
+			<li class="menu-item"><a class="color10" href="brands.html">Brands</a></li>
+			<li class="menu-item"><a class="color3" href="index.html">Sale</a></li>
+			<li><a class="menu-item color7" href="404.html">News</a></li>
 				<div class="clearfix"> </div>
-			</ul>
+		</ul>
 			</div>
 	        <div class="clearfix"> </div>
 	        <div class="header_arrow">
@@ -297,5 +221,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	    </div>
    	</div>
    </div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        dropdowns.forEach((dropdown) => {
+            dropdown.addEventListener('mouseover', () => {
+                dropdown.classList.add('active');
+            });
+
+            dropdown.addEventListener('mouseout', () => {
+                dropdown.classList.remove('active');
+            });
+        });
+    });
+</script>
+
 </body>
 </html>		

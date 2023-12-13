@@ -37,6 +37,11 @@ body a{
 	float:right;
 	margin-top: 1.5em;
 }
+.menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
 .h_nav ul li a {
 	display: block;
 	font-size: 0.85em;
