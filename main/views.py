@@ -3,6 +3,10 @@ from .models import Product
 from django.http import HttpResponse
 from django.conf import settings
 import os
+from django.contrib import messages
+from django.views.decorators.http import require_POST
+from django.shortcuts import get_object_or_404
+from .models import Product
 
 # Create your views here.
 def index(request):
@@ -16,3 +20,18 @@ def serve_image(request, image_path):
         with open(image_path, 'rb') as img:
             return HttpResponse(img.read(), content_type="image/jpeg")  # Уточни тип содержимого в соответствии с расширением файла
     return HttpResponse(status=404)
+
+@require_POST
+def buy(request, product_id):
+    # Логика покупки товара
+    product = get_product_by_id(product_id)
+    
+    # Логика работы с Stripe...
+    
+    messages.success(request, f'Вы успешно купили товар: {product.name}. Спасибо за покупку!')
+    return redirect('success')  # Замените 'success' на имя вашей страницы успешной покупки
+
+def get_product_by_id(product_id):
+    # Получение товара по его идентификатору
+    product = get_object_or_404(Product, id=product_id)
+    return product

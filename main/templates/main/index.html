@@ -177,14 +177,47 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <img src="{{ media_root }}{{ product.image.url }}" class="img-responsive" alt="{{ product.name }}"/>
                                 <span>{{ product.name }}</span>
                             </a>
+							{% comment %} ОТОБРАЖЕНИЕ ТОВАРА {% endcomment %}
                             <div class="lb-overlay" id="image-{{ product.id }}">
                                 <a href="#page" class="lb-close">x Close</a>
                                 <img src="{{ media_root }}{{ product.image.url }}" class="img-responsive" alt="{{ product.name }}"/>
-								<p>Полный путь к изображению: {{ media_root }}/{{ product.image.url}}</p>
+								{% comment %} <p>Полный путь к изображению: {{ media_root }}/{{ product.image.url}}</p> {% endcomment %}
                                 <div>
-                                    <h3>{{ product.name }} <span>{{ product.description }}</span></h3>
+                                    <h3>{{ product.name }} </h3>
                                     <p>{{ product.description }}</p>
                                 </div>
+
+								<!-- Где-то в вашем HTML -->
+								{% csrf_token %}
+								<button onclick="addToCart({{ product.id }})">Купить</button>
+
+								<script>
+									function addToCart(productId) {
+										// Отправка данных на сервер или другая логика для добавления товара в корзину
+										// Здесь вы можете использовать AJAX, Fetch API или другие методы для отправки запроса на сервер
+
+										// Пример с использованием Fetch API
+										fetch('/main/buy', {
+											method: 'POST',
+											headers: {
+												'Content-Type': 'application/json',
+											},
+											body: JSON.stringify({ productId: productId }),
+										})
+										.then(response => response.json())
+										.then(data => {
+											// Обработка ответа от сервера, например, обновление интерфейса корзины
+											console.log('Товар добавлен в корзину', data);
+											window.location.href = '/checkout/';
+
+										})
+										.catch(error => {
+											console.error('Произошла ошибка при добавлении товара в корзину', error);
+										});
+									}
+								</script>
+
+
                             </div>
                         </li>
                     {% endfor %}

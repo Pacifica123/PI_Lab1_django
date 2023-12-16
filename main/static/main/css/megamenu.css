@@ -43,15 +43,14 @@
 .menu-item .megapanel {
     display: none;
     position: relative;
-	
+	padding: 10px;
 }
 
 .menu-item:hover .megapanel {
     display: block;	
 }
-
 .menu-item ul{
-	padding: 10px 0;
+	padding: 10px;
 	width: 250px;
 }
 

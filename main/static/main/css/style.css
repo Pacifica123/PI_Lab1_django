@@ -40,7 +40,7 @@ body a{
 .menu ul {
     display: flex;
     list-style: none;
-    padding: 0;
+ 
 }
 .h_nav ul li a {
 	display: block;
@@ -53,6 +53,7 @@ body a{
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 	line-height: 2.5em;
+	padding: 10px;
 }
 .h_nav ul li a:hover{
 	text-decoration:none;

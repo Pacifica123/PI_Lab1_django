@@ -7,8 +7,8 @@ from djstripe.models import Product
 stripe.api_key = settings.SECRET_KEY
 
 def checkout(request):
-    products = Product.objects.all() # здесь будет способ получения товаров
-    return render(request, 'payments/checkout.html', {'products': products})
+    # products = Product.objects.all() # здесь будет способ получения товаров
+    return render(request, 'payments/checkout.html') # , {'products': products})
 
 def charge(request):
     if request.method == 'POST':
