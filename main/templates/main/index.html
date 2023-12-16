@@ -189,25 +189,34 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 								<!-- Где-то в вашем HTML -->
 								{% csrf_token %}
-								<button onclick="addToCart({{ product.id }})">Купить</button>
+								<button onclick="buy({{ product.id }})">Купить</button>
 
 								<script>
-									function addToCart(productId) {
-										// Отправка данных на сервер или другая логика для добавления товара в корзину
-										// Здесь вы можете использовать AJAX, Fetch API или другие методы для отправки запроса на сервер
+									function buy(productId) {
+										 
 
-										// Пример с использованием Fetch API
-										fetch('/main/buy', {
+										console.log(document.cookie)
+										const csrftoken = document.cookie
+											.split('; ')
+											.find(cookie => cookie.startsWith('csrftoken='))
+											.split('=')[1];
+
+										console.log(csrftoken)
+
+										// Отправка данных на сервер 
+										fetch('/main/buy/'+productId, {
 											method: 'POST',
 											headers: {
 												'Content-Type': 'application/json',
+												'X-CSRFToken': csrftoken,
 											},
 											body: JSON.stringify({ productId: productId }),
 										})
+										// где-то тут работает бэкенд
 										.then(response => response.json())
 										.then(data => {
 											// Обработка ответа от сервера, например, обновление интерфейса корзины
-											console.log('Товар добавлен в корзину', data);
+											console.log('Товар куплен', data);
 											window.location.href = '/checkout/';
 
 										})

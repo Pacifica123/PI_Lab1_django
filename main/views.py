@@ -21,17 +21,22 @@ def serve_image(request, image_path):
             return HttpResponse(img.read(), content_type="image/jpeg")  # Уточни тип содержимого в соответствии с расширением файла
     return HttpResponse(status=404)
 
+# вот сюда почему-то не попадает - почему?
+
 @require_POST
 def buy(request, product_id):
+    print('Смотрим здесь')
     # Логика покупки товара
     product = get_product_by_id(product_id)
     
     # Логика работы с Stripe...
     
     messages.success(request, f'Вы успешно купили товар: {product.name}. Спасибо за покупку!')
-    return redirect('success')  # Замените 'success' на имя вашей страницы успешной покупки
+    # return redirect('success')  # Замените 'success' на имя вашей страницы успешной покупки
+    return redirect('index')
 
 def get_product_by_id(product_id):
     # Получение товара по его идентификатору
+    print('До этого момента все хорошо')
     product = get_object_or_404(Product, id=product_id)
     return product
